@@ -1,0 +1,37 @@
+<h2>Konfiguracja Ticket Autorespondera <%=  %></h2>
+
+<%= form_tag sc_autoresp_save_path, method: :post %>
+<style type="text/css">
+  .tg  {border-collapse:collapse;border-spacing:0;}
+  .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+  .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+  .tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg" style="undefined;table-layout: fixed; width: 453px">
+  <colgroup>
+    <col style="width: 112px">
+    <col style="width: 341px">
+  </colgroup>
+  <tr>
+    <th class="tg-0lax"><%= label_tag(:statuses, 'Dla wybranego statusu: ') %></th>
+    <th class="tg-0lax"><%= select_tag(:statuses, options_for_select(@statuses, @config.i_status)) %></th>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><%= label_tag(:days, 'Zgłoszony dni temu :') %></td>
+    <td class="tg-0lax"><%= number_field_tag(:days, @config.days_ago) %></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><%= label_tag(:subject, 'Tytuł maila: ') %></td>
+    <td class="tg-0lax"><%= text_field_tag(:subject, @config.subject) %></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><%= label_tag(:body, 'Treść maila: ') %></td>
+    <td class="tg-0lax"><%= text_area_tag(:body,@config.body, size: "38x12") %></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><%= label_tag(:active, 'Włączony') %></td>
+    <td class="tg-0lax"><%=check_box_tag(:active, @config.active) %></td>
+  </tr>
+</table>
+<%= submit_tag('Zapisz') %>
+</form>
