@@ -1,3 +1,6 @@
 = sc_autoresp
 
-sm1
+1. Migracja
+2. Konfiguracja
+3. rake do crona
+4. Nazwa pola gdzie przechowywana jest informacja o emailu klienta!!!!!!
