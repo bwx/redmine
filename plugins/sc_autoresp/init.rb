@@ -5,5 +5,5 @@ Redmine::Plugin.register :sc_autoresp do
   version '0.0.1'
   url 'http://ppartner.pro'
   author_url 'https://about.me/bwalecki'
-  menu :application_menu, :sc_autoresp, { :controller => 'configuration', :action => 'index' }, :caption => 'Ticket Autoresp. konfiguracja'
+  menu :application_menu, :sc_autoresp, { :controller => 'configuration', :action => 'index' }, :caption => 'SC_Autoresp konfiguracja'
 end
