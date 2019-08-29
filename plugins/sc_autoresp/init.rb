@@ -2,8 +2,8 @@ Redmine::Plugin.register :sc_autoresp do
   name 'Skycash Auto responder plugin'
   author 'Bartosz Walecki'
   description 'Skycash.com plugin redmine autoresponder'
-  version '0.0.1'
+  version '0.0.2'
   url 'http://ppartner.pro'
   author_url 'https://about.me/bwalecki'
-  menu :application_menu, :sc_autoresp, { :controller => 'configuration', :action => 'index' }, :caption => 'SC_Autoresp konfiguracja'
+  menu :application_menu, :sc_autoresp, { :controller => 'configuration', :action => 'index' }, :caption => 'SC Autoresponder'
 end

@@ -3,6 +3,7 @@ class ConfigurationController < ApplicationController
 
   def index
     @statuses = IssueStatus.all.map { |is| [is.name, is.id] }
+    @projects = Project.all.map {|p| [p.name, p.id]}
   end
   def save
     @config.subject= params[:subject]
@@ -11,6 +12,8 @@ class ConfigurationController < ApplicationController
     @config.days_ago=params[:days].to_i
     @config.i_status=params[:statuses].to_i
     @config.s_status=IssueStatus.find(@config.i_status).name
+    @config.project_id=params[:project]
+    @config.from_email=params[:from_email]
 
     if @config.save
       redirect_to sc_autoresp_path, notice: 'Konfiguracja zapisana.'
